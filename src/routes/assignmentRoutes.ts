@@ -12,7 +12,7 @@ import {
 
 const router = Router();
 
-router.get('/', authenticate, getAllAssignments);
+router.get('/', getAllAssignments);
 
 router.get('/:id', authenticate, getAssignmentById);
 

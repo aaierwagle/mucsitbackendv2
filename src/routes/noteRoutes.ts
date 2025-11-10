@@ -12,7 +12,7 @@ import {
 
 const router = Router();
 
-router.get('/', authenticate, getAllNotes);
+router.get('/', getAllNotes);
 
 router.get('/:id', authenticate, getNoteById);
 

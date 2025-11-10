@@ -12,7 +12,7 @@ import {
 
 const router = Router();
 
-router.get('/', authenticate, getAllOldQuestions);
+router.get('/', getAllOldQuestions);
 
 router.get('/:id', authenticate, getOldQuestionById);
 

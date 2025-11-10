@@ -12,7 +12,7 @@ import {
 
 const router = Router();
 
-router.get('/', authenticate, getAllBlogs);
+router.get('/', getAllBlogs);
 
 router.get('/:id', authenticate, getBlogById);
 
