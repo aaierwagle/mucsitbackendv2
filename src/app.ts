@@ -10,21 +10,10 @@ import { errorHandler } from './middleware/errorHandler';
 const createApp = (): Application => {
   const app = express();
 
-  // CORS configuration
-  const allowedOrigins = [
-    'http://localhost:3000', // your frontend local
-    'https://your-frontend-domain.com' // production frontend
-  ];
-
+  // Enable CORS for all origins
   app.use(
     cors({
-      origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          callback(new Error('CORS policy: This origin is not allowed'));
-        }
-      },
+      origin: '*', // allow all origins
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       allowedHeaders: ['Content-Type', 'Authorization'],
       credentials: true // allow cookies/auth headers
